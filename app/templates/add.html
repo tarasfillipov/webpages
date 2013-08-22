@@ -3,23 +3,26 @@
 {% block content %}
 
 <div class="container">
-    <h1>7webpages test</h1>
-    <div class="row pull-left">
-    {% for note in notes %}
-        <div class="row">
-            <h2>{{ note.title }}</h2>
-            <p>{{ note.text }}</p>
-        </div>
-    {% endfor %}
-    </div>
+<form id="NoteForm" enctype="multipart/form-data" action="/add/" method="post">
 
-    <div class="row pull-right">
-        <a href="/add">add note</a>
-    </div>
+        {% csrf_token %}
 
+
+        {% for field in form %}
+
+            {{ field.label_tag }}
+            {{ field }}
+            <div class="errorfield">{{ field.errors }}</div>
+
+        {% endfor %}
+
+
+        <p>
+            <input type="submit" value="Add" id="id_send"/>
+            <a href='/'>Cancel</a>
+        </p>
+
+</form>
  </div>
-<p>inclusion tags</p>
-{% load my_tags %}
-{% note_by_id "1" %}
 
 {% endblock content %}
