@@ -9,12 +9,19 @@
 <body>
 <div class="container">
     <h1>7webpages test</h1>
+    <div class="row pull-left">
     {% for note in notes %}
         <div class="row">
             <h2>{{ note.title }}</h2>
             <p>{{ note.text }}</p>
         </div>
     {% endfor %}
+    </div>
+
+    <div class="row pull-right">
+        <a href="/add">add note</a>
+    </div>
+
  </div>
 <p>inclusion tags</p>
 {% load my_tags %}
