@@ -1,14 +1,1 @@
-1) calendar/    pip install -r requirements.txt
-
-2) calendar/   make syncdb
-   calendar/   make run
-
-   or
-
-   calendar/app/  manage.py syncdb
-   calendar/app/  manage.py runserver
-
-
-3)localhost:8000/admin   username: admin
-                         password: admin
-
+simple app for testing my skills
