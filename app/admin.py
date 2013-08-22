@@ -1,17 +1,7 @@
 from django.contrib import admin
-from models import Lesson,Student,Group
+from models import Note
 
-class LessonAdmin(admin.ModelAdmin):
-    list_display = ['title','date']
+class NoteAdmin(admin.ModelAdmin):
+    list_display = ['text']
 
-admin.site.register(Lesson, LessonAdmin)
-
-class StudentAdmin(admin.ModelAdmin):
-    list_display = ['fullname', 'group']
-
-admin.site.register(Student, StudentAdmin)
-
-class GroupAdmin(admin.ModelAdmin):
-    list_display = ['title']
-
-admin.site.register(Group, GroupAdmin)
+admin.site.register(Note, NoteAdmin)

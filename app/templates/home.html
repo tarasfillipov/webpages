@@ -1,49 +1,20 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html>
-<head><title>{% block title %}No title{% endblock %}</title>
-
+<head><title>{% block title %}Notes{% endblock %}</title>
     {% load staticfiles %}
     <link rel="stylesheet" type="text/css" href="{% static "bootstrap/css/bootstrap.min.css" %}" />
 </head>
+
 <body>
 <div class="container">
-    <h1>SCHEDULE</h1>
-    {% if lessons %}
-        <table class="table">
-            <tr>
-                <td>Lesson</td>
-                <td>Teacher</td>
-                <td>Group</td>
-                <td>Date</td>
-            </tr>
-
-            {% for lesson in lessons %}
-
-            <tr>
-                <td>{{ lesson.0.title }}</td>
-                <td>{{ lesson.0.teacher }}</td>
-                <td>{{ lesson.0.group }}
-                    <div class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                        Students <b class="caret"></b>
-                    </a>
-                    <ul class="dropdown-menu">
-                    {% for student in lesson.1 %}
-                        <li>{{ student.fullname }}</li>
-                    {% endfor %}
-                    </ul>
-                    </div>
-                </td>
-                <td>{{ lesson.0.date }}</td>
-            </tr>
-
-            {% endfor %}
-        </table>
-    {% else %}
-        <h3>No lessons on this week!</h3>
-    {% endif %}
-
+    <h1>7webpages test</h1>
+    {% for note in notes %}
+        <div class="row">
+            <h2>{{ note.title }}</h2>
+            <p>{{ note.text }}</p>
+        </div>
+    {% endfor %}
  </div>
 
 <script src="http://code.jquery.com/jquery.js"></script>
