@@ -28,3 +28,9 @@ class HttpTest(TestCase):
 
         note = Note.objects.get(pk=2)
         self.assertEqual(note.text, 'hello hello')
+
+    def test_context_processor(self):
+        response = self.client.get('/')
+        amount = Note.objects.all().count()
+        self.assertEquals(
+            response.context['amount'],amount)
