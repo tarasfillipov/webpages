@@ -1,1 +1,4 @@
+ {% if note.photo %}
+ <img src="{{ note.photo.url }}" alt="Photo" />
+ {% endif %}
 <p>{{ note.text }}</p>

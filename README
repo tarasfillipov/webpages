@@ -1,1 +1,8 @@
 simple app for testing my skills
+admin:  login: admin
+        pass: admin
+
+to start:
+1) make syncdb
+2) make migrate
+3) make run
