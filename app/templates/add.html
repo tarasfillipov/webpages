@@ -5,8 +5,8 @@
 {% block content %}
 
 <div class="container">
-<form id="NoteForm" enctype="multipart/form-data" action="/add/" method="post">
-
+<form id="NoteForm" enctype="multipart/form-data" action="" method="post">
+<div id="ajaxwrapper">
         {% csrf_token %}
 
 
@@ -24,7 +24,7 @@
             <a href='/'>Cancel</a>
         </p>
 
-
+</div>
 </form>
  </div>
 

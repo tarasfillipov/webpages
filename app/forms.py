@@ -13,6 +13,7 @@ class NoteWidget(Textarea):
             'js/jquery.min.js',
             'js/jquery-ui-1.8.21.custom.min.js',
             'js/counter.js',
+            'js/contact_form.js',
         )
 
     def render(self, name, value, attrs=None):
