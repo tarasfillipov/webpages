@@ -18,7 +18,7 @@
     </div>
 
     <div class="row pull-right">
-        <a href="/add">add note</a>
+        <a href="/add">add note</a><p><a href="/check">check external widget</a></p>
     </div>
 
  </div>
@@ -26,5 +26,8 @@
 <p>inclusion tags</p>
 {% load my_tags %}
 {% note_by_id "1" %}
+<hr>
+<script type="text/javascript" src="http://localhost:8000/widget"></script>
+<div id="widget"></div>
 
 {% endblock content %}

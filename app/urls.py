@@ -5,9 +5,12 @@ from django.conf import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     url(r'^add/', 'app.views.add', name='add'),
     url(r'^$', 'app.views.home', name='home'),
+    url(r'^check/$', 'app.views.check', name='check'),
+    url(r'^widget/$', 'app.widgets.random_widget', name='random_widget'),
     url(r'^admin/', include(admin.site.urls)),
 
 )

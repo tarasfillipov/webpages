@@ -4,6 +4,8 @@ from models import Note
 from django.utils.html import conditional_escape, format_html
 from django.utils.encoding import force_text
 from django.forms.util import flatatt
+
+
 class NoteWidget(Textarea):
     class Media:
         css = {
@@ -17,17 +19,20 @@ class NoteWidget(Textarea):
         )
 
     def render(self, name, value, attrs=None):
-        if value is None: value = ''
+        if value is None:
+            value = ''
         final_attrs = self.build_attrs(attrs, name=name)
-        return format_html('<div class="countered"><textarea{0}>\r\n{1}</textarea>'
+        return format_html('<div class="countered"><textarea{0}>\r\n{1}'
+                           '</textarea>'
                            '<span id="counter_area">Total: 0</span></div>',
                            flatatt(final_attrs),
                            force_text(value))
 
+
 class NoteForm(ModelForm):
     class Meta:
         model = Note
-        fields = ('text','photo')
+        fields = ('text', 'photo')
         widgets = {
             'text': NoteWidget(),
         }
